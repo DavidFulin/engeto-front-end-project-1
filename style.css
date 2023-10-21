@@ -1,0 +1,523 @@
+/* note: BEM naming convention used (or at least i tried :D)*/
+
+/* imports */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+/* variables */
+:root {
+  /* color palette */
+  --color-brown-dark: #33292a;
+  --color-brown-light: #644b4f;
+  --color-gray-dark: #333333;
+  --color-gray-light: #f2f2f2;
+  --color-orange-dark: #e9877b;
+  --color-orange-light: #efa69d;
+  --color-black: #000;
+  --color-white: #fff;
+  /* colors */
+  --color-page-background: var(--color-gray-dark);
+  --color-navbar-background: var(--color-brown-dark);
+  --color-navbar-link: var(--color-white);
+  --color-navbar-link-hover: var(--color-orange-dark);
+  --color-header-title: var(--color-white);
+  --color-section-background-light: var(--color-white);
+  --color-section-background-lighter: var(--color-brown-light);
+  --color-section-background-dark: var(--color-brown-dark);
+  --color-title-background-light: var(--color-gray-light);
+  --color-footer-background: var(--color-gray-dark);
+  --color-footer: var(--color-white);
+  --color-link: var(--color-orange-light);
+  --color-link-hover: var(--color-orange-dark);
+  --color-btn-background-light: var(--color-white);
+  --color-btn-background-dark: var(--color-gray-dark);
+  --color-btn-light: var(--color-white);
+  --color-btn-dark: var(--color-gray-dark);
+  --color-text-light: var(--color-white);
+  --color-text-dark: var(--color-black);
+  /* font families */
+  --font-family: "Roboto", Verdana, Arial;
+  /* font sizes */
+  --font-size-max: 22px;
+  --font-size-default: min(var(--font-size-max), calc(16px + 0.390625vw));
+  --font-size-huge: 3rem;
+  --font-size-large: 1.2rem;
+  --font-size-medium: 0.8rem;
+  --font-size-small: 0.6rem;
+  --font-size-mini: 0.5rem;
+  /* font weights */
+  --font-weight-large: 700;
+  --font-weight-medium: 500;
+  --font-weight-small: 400;
+  --font-weight-mini: 300;
+  /* paddings */
+  --padding-default: 1.5rem 1rem;
+  --padding-btn: 0.4rem 0.8rem;
+  /* border radiuses */
+  --border-radius-default: 5px;
+  /* images */
+  --img-header-background: url(/assets/images/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg);
+  /* page */
+  --page-width-max: 1200px; /* max page width for all devices */
+  --page-content-width: 60%; /* width of active content inside page */
+}
+
+/* default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: var(--font-size-default);
+}
+
+body {
+  background-color: var(--color-page-background);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--color-link);
+}
+a:hover,
+a:active {
+  color: var(--color-link-hover);
+}
+
+button {
+  background-color: var(--color-btn-background-light);
+  color: var(--color-btn-dark);
+  border-radius: var(--border-radius-default);
+  border-color: transparent;
+  padding: var(--padding-btn);
+}
+button:hover,
+button:active {
+  background-color: var(--color-btn-background-dark);
+  color: var(--color-btn-light);
+  border-radius: var(--border-radius-default);
+  cursor: pointer;
+}
+
+/* page */
+.page {
+  max-width: var(--page-width-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* navigation bar */
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: -1px;
+  z-index: 1;
+  background-color: var(--color-navbar-background);
+  color: var(--color-navbar);
+  padding: 0.6rem 0.2rem;
+}
+
+.navbar__menu {
+  width: var(--page-content-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.navbar__menu-item {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+#navbar__hamburger-icon,
+#navbar__cross-icon {
+  width: 1rem;
+  display: none;
+  cursor: pointer;
+}
+
+.navbar__menu-item__link {
+  color: var(--color-navbar-link);
+  text-decoration: none;
+}
+.navbar__menu-item__link:hover,
+.navbar__menu-item__link:active {
+  color: var(--color-navbar-link-hover);
+}
+
+/* header */
+.page-header {
+  width: 100%;
+}
+
+.header-logo {
+  height: 28rem;
+  background-image: var(--img-header-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+}
+
+.header-title {
+  width: var(--page-content-width);
+  word-spacing: 100vw; /* each word on separate line */
+  line-height: 3rem;
+  margin: 3rem 1rem;
+  text-align: right;
+  font-size: var(--font-size-huge);
+  font-weight: var(--font-weight-large);
+  color: var(--color-header-title);
+}
+
+/* main content */
+.page-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* sections */
+.section {
+  padding: 3rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section__content {
+  width: var(--page-content-width);
+}
+
+/* about us */
+.about-us {
+  background-color: var(--color-section-background-light);
+  color: var(--color-text-dark);
+}
+
+.about-us__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.about-us__content > * {
+  flex: 1;
+}
+
+.about-us__title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-large);
+  margin-bottom: 0.4rem;
+}
+
+.about-us__text {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+}
+
+.about-us__image {
+  width: 14rem;
+}
+
+/* what we do */
+.what-we-do {
+  background-color: var(--color-section-background-dark);
+  color: var(--color-text-light);
+}
+
+.what-we-do__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.what-we-do__title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-large);
+  margin-bottom: 1rem;
+}
+
+.what-we-do__text {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-small);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.what-we-do__list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.what-we-do__list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.what-we-do__list-item__image {
+  width: 3rem;
+}
+
+.what-we-do__list-item__text {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-large);
+}
+
+/* our trips */
+.our-trips {
+  background-color: var(--color-section-background-light);
+  color: var(--color-text-dark);
+}
+
+.our-trips__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-trips__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.our-trips__list-item {
+  aspect-ratio: 3/2;
+  border-radius: var(--border-radius-default);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-trips__image {
+  object-fit: cover;
+}
+
+.our-trips__title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-large);
+  background-color: var(--color-title-background-light);
+}
+
+/* where to go */
+.where-to-go {
+  background-color: var(--color-section-background-lighter);
+  color: var(--color-text-light);
+}
+
+.where-to-go__content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.where-to-go__title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-large);
+  padding-right: 1rem;
+}
+
+.where-to-go__block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.where-to-go__text {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-small);
+}
+
+.btn-contact_us {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-large);
+  max-width: 6rem;
+}
+
+/* reviews */
+.reviews {
+  background-color: var(--color-section-background-light);
+  color: var(--color-text-dark);
+}
+
+.reviews__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviews__title {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-large);
+}
+
+.reviews__text {
+  width: 50%;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.reviews__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.reviews__list-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.reviews__list-item__image {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviews__list-item__text {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-small);
+  text-align: center;
+}
+
+.reviews__list-item__author {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-large);
+}
+
+/* gallery */
+.gallery {
+  background-color: var(--color-section-background-light);
+  color: var(--color-text-dark);
+  padding: 0;
+}
+
+.gallery__content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery__image {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
+/* footer */
+.page-footer {
+  width: 100%;
+  background-color: var(--color-footer-background);
+  color: var(--color-footer);
+  padding: var(--padding-default);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-link,
+.copyright {
+  font-size: var(--font-size-mini);
+  font-weight: var(--font-weight-large);
+}
+
+/* smaller screen (mobile/tablet ...) */
+@media screen and (max-width: 768px) {
+  :root {
+    --page-content-width: 90%;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    align-items: end;
+  }
+  .navbar__menu-item {
+    display: block;
+  }
+  .navbar__menu-item:not(.visible) {
+    display: none;
+  }
+  #navbar__hamburger-icon:is(.visible),
+  #navbar__cross-icon:is(.visible) {
+    display: block;
+  }
+  .header-title {
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 1.5rem;
+  }
+  .about-us__image {
+    width: 100%;
+  }
+  .what-we-do__list {
+    flex-direction: column;
+  }
+  .our-trips__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .our-trips__list-item {
+    width: 100%;
+  }
+  .our-trips__title {
+    height: 4rem;
+  }
+  .where-to-go__content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .reviews__text {
+    width: 100%;
+  }
+  .reviews__list {
+    flex-direction: column;
+  }
+  .gallery__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

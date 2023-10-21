@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- David Fulín -->
+  <!-- david.fulin@unicreditgroup.cz -->
+  <!-- david_47472 -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Travel Assistent</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // navigation (hamburger menu handler)
+      function navbar_menu_open() {
+        document
+          .querySelectorAll(".navbar__menu-item")
+          .forEach((el) => el.classList.add("visible"));
+        document
+          .getElementById("navbar__hamburger-icon")
+          .classList.remove("visible");
+        document.getElementById("navbar__cross-icon").classList.add("visible");
+      }
+      function navbar_menu_close() {
+        document
+          .querySelectorAll(".navbar__menu-item")
+          .forEach((el) => el.classList.remove("visible"));
+        document
+          .getElementById("navbar__hamburger-icon")
+          .classList.add("visible");
+        document
+          .getElementById("navbar__cross-icon")
+          .classList.remove("visible");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- page -->
+    <div class="page">
+      <!-- navigation -->
+      <nav class="navbar">
+        <ul class="navbar__menu">
+          <!-- hamburger icon -->
+          <li
+            id="navbar__hamburger-icon"
+            class="navbar__menu-item visible"
+            onclick="navbar_menu_open()"
+          >
+            <img src="assets/icons/menu_hamburger_icon.png" />
+          </li>
+          <!-- cross icon -->
+          <li
+            id="navbar__cross-icon"
+            class="navbar__menu-item navbar__menu-item--cross"
+            onclick="navbar_menu_close()"
+          >
+            <img src="assets/icons/menu_cross_icon.jpg" />
+          </li>
+          <!-- regular items -->
+          <li class="navbar__menu-item">
+            <a class="navbar__menu-item__link" href="#about-us">About Us</a>
+          </li>
+          <li class="navbar__menu-item">
+            <a class="navbar__menu-item__link" href="#what-we-do">What We Do</a>
+          </li>
+          <li class="navbar__menu-item">
+            <a class="navbar__menu-item__link" href="#our-trip">Our Trips</a>
+          </li>
+          <li class="navbar__menu-item">
+            <a class="navbar__menu-item__link" href="#where-to-go"
+              >Where to go</a
+            >
+          </li>
+          <li class="navbar__menu-item">
+            <a class="navbar__menu-item__link" href="#review">Reviews</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- header -->
+      <header class="page-header">
+        <!-- logo -->
+        <div class="header-logo">
+          <h1 class="header-title">Your Travel Assistant</h1>
+        </div>
+      </header>
+
+      <!-- main content -->
+      <main class="page-main">
+        <!-- about us -->
+        <section id="about-us" class="section about-us">
+          <div class="section__content about-us__content">
+            <div class="about-us__block">
+              <h2 class="about-us__title">About us</h2>
+              <p class="about-us__text">
+                Leigh McAdam is a Calgary-based writer, photographer and social
+                media enthusiast with over 48,000 followers. Her blog:
+                HikeBikeTravel is frequently cited as one of the top travel and
+                outdoor adventure blogs in Canada, and consistently receives
+                over 135,000 monthly page views. She shares her enthusiasm for
+                the outdoors as a brand ambassador for Sporting Life, and has
+                worked on campaigns for Travel Alberta, Expedia and Flight Hub.
+                Leigh is the author of Discover Canada: 100 Inspiring Outdoor
+                Adventures. Currently, she is co-authoring: 125 Nature Hot Spots
+                in Alberta (spring 2018). A true adventurer, Leigh will try
+                anything once, except perhaps bungee jumping.
+              </p>
+            </div>
+            <img
+              class="about-us__image"
+              src="assets/images/anneliese-phillips-uv4-vl3liKM-unsplash.jpg"
+              alt="landscape"
+            />
+          </div>
+        </section>
+        <!-- what we do -->
+        <section id="what-we-do" class="section what-we-do">
+          <div class="section__content what-we-do__content">
+            <h2 class="what-we-do__title">What We Do</h2>
+            <p class="what-we-do__text">
+              Opportunities for challenging hikes and pleasant strolls are
+              scattered all over this planet; you just need to know where to
+              find them. We do. Kilimanjaro, Everest Base Camp, Patagonia, and
+              the Inca Trail are out there, waiting for you to walk all over
+              them. We’re proud of our record of successful ascents (over 92% of
+              our travellers make it to the top of Kili, depending on the
+              route), but it’s our CEOs and local guides that make the journey
+              itself as memorable as the summit. And if you’re not into big
+              climbs, don’t sweat it; we’ve got loads of lower-impact walks and
+              iconic treks you’ll love, too.
+            </p>
+            <!-- activity list -->
+            <div class="what-we-do__list">
+              <!-- hiking -->
+              <div class="what-we-do__list-item">
+                <img
+                  class="what-we-do__list-item__image"
+                  src="assets/icons/hiking-white.png"
+                  alt="hiking icon"
+                />
+                <span class="what-we-do__list-item__text">Hiking</span>
+              </div>
+              <!-- cycling -->
+              <div class="what-we-do__list-item">
+                <img
+                  class="what-we-do__list-item__image"
+                  src="assets/icons/cycle-white.png"
+                  alt="cycling icon"
+                />
+                <span class="what-we-do__list-item__text">Cycling</span>
+              </div>
+              <!-- surfing -->
+              <div class="what-we-do__list-item">
+                <img
+                  class="what-we-do__list-item__image"
+                  src="assets/icons/water-white.png"
+                  alt="surfing icon"
+                />
+                <span class="what-we-do__list-item__text">Surfing</span>
+              </div>
+              <!-- car trips -->
+              <div class="what-we-do__list-item">
+                <img
+                  class="what-we-do__list-item__image"
+                  src="assets/icons/car-white.png"
+                  alt="car trips icon"
+                />
+                <span class="what-we-do__list-item__text">Car trips</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- our trips -->
+        <section id="our-trip" class="section our-trips">
+          <div class="section__content our-trips__content">
+            <!-- image list -->
+            <div class="our-trips__list">
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/simon-english-48nerZQCHgo-unsplash.jpg"
+                alt="trip image 1"
+              />
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/james-wheeler-ZOA-cqKuJAA-unsplash.jpg"
+                alt="trip image 2"
+              />
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/daniel-tseng-73lmMKhi2U8-unsplash.jpg"
+                alt="trip image 3"
+              />
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/holly-mandarich-UVyOfX3v0Ls-unsplash.jpg"
+                alt="trip image 4"
+              />
+              <!-- title -->
+              <h2 class="our-trips__list-item our-trips__title">Our Trips</h2>
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/patrick-szylar-45bM3XGqnDE-unsplash.jpg"
+                alt="trip image 5"
+              />
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/chung-yee-tsang-wqxCKM0R6R8-unsplash.jpg"
+                alt="trip image 6"
+              />
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/julian-bialowas-ilkTnuMunP8-unsplash.jpg"
+                alt="trip image 7"
+              />
+              <img
+                class="our-trips__list-item our-trips__image"
+                src="assets/images/matej-drha-rbDzMcJsBkY-unsplash.jpg"
+                alt="trip image 8"
+              />
+            </div>
+          </div>
+        </section>
+        <!-- where to go -->
+        <section id="where-to-go" class="section where-to-go">
+          <div class="section__content where-to-go__content">
+            <h2 class="where-to-go__title">Where do you want to go ?</h2>
+            <div class="where-to-go__block">
+              <p class="where-to-go__text">
+                You’ll find 21 detailed adventure guides, over a hundred
+                practical travel tips, book reviews on anything outdoors
+                related, packing lists on a range of outdoor activities
+                including kayaking, backpacking and camping as well as honest
+                hotel and B&B reviews.
+              </p>
+              <p class="where-to-go__text">Contact us and we will help you!</p>
+              <button class="btn-contact_us">CONTACT US</button>
+            </div>
+          </div>
+        </section>
+        <!-- reviews -->
+        <section id="review" class="section reviews">
+          <div class="section__content reviews__content">
+            <h2 class="reviews__title">Reviews</h2>
+            <p class="reviews__text">
+              Our amazing clients are the reason we exist, and their reactions
+              to our customized travel experiences and personalized service keep
+              us smiling all day long. Here is just a sampling of what they’ve
+              said:
+            </p>
+            <div class="reviews__list">
+              <div class="reviews__list-item">
+                <img
+                  class="reviews__list-item__image"
+                  src="assets/images/kalen-emsley-kGSapVfg8Kw-unsplash.jpg"
+                  alt="profile image 1"
+                />
+                <p class="reviews__list-item__text">
+                  She has booked two major European trips for us in the past
+                  year and every aspect has met, and in most cases exceeded, our
+                  expectations. Best prices, best hotels, best itineraries, and
+                  best cruises, she does it all. But the most important thing is
+                  she remembers the little things that we would do if we were
+                  making the plans ourselves.
+                </p>
+                <span class="reviews__list-item__author">Bertie Norton</span>
+              </div>
+              <div class="reviews__list-item">
+                <img
+                  class="reviews__list-item__image"
+                  src="assets/images/jeffrey-keenan-pUhxoSapPFA-unsplash.jpg"
+                  alt="profile image 2"
+                />
+                <p class="reviews__list-item__text">
+                  Leigh McAdam has been making my travel arrangements for about
+                  20 years and there is no one else I would trust to arrange my
+                  trips and tours. I've also had great fun on a few of the group
+                  trips she has arranged - Peru & Machu Picchu and a 10-day
+                  cruise out of Venice and diving. It's always an eclectic group
+                  of well traveled, interesting people.
+                </p>
+                <span class="reviews__list-item__author">Frank Kinney</span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- gallery -->
+        <section class="section gallery">
+          <div class="section__content gallery__content">
+            <img
+              class="gallery__image"
+              src="assets/images/alexey-fedenkov-BaCZYH9RLmQ-unsplash.jpg"
+              alt="gallery image 1"
+            />
+            <img
+              class="gallery__image"
+              src="assets/images/omer-salom-LoijtQXXNhs-unsplash.jpg"
+              alt="gallery image 2"
+            />
+            <img
+              class="gallery__image"
+              src="assets/images/patrick-szylar-45bM3XGqnDE-unsplash.jpg"
+              alt="gallery image 3"
+            />
+            <img
+              class="gallery__image"
+              src="assets/images/daniel-tseng-73lmMKhi2U8-unsplash.jpg"
+              alt="gallery image 4"
+            />
+          </div>
+        </section>
+      </main>
+
+      <!-- footer -->
+      <footer class="page-footer">
+        <a class="contact-link" href="#where-to-go">Contact</a>
+        <h6 class="copyright">
+          &copy; 2022 - Your Travel Assistant. All Rights Reserved.
+        </h6>
+      </footer>
+    </div>
+  </body>
+</html>
